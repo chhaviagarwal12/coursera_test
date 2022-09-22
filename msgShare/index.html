@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<meta charset="UTF-8">
+        <title>Message Share</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href= "style.css"/>
+    
+    </head>
+    <body>
+        <div class="row">
+            <div class="col offset-md-4 ">
+                <div id="message-show" class="card w-50 hide"> 
+                    <div class="card-body">
+                        <h1></h1>
+                        <div>
+                            <a href="./index.html">Create your own secret message</a>
+                        </div>
+                           
+                    </div>
+                </div>
+                <div id="message-form" class="card w-50 "> 
+                    <div class="card-body">
+                        <div class="card-title">
+                            Enter Your Message
+                            </div>
+                            <form>
+                                <input type="text" id="msgInput" value=" "/>
+                                <button class="btn btn-primary">Create</button>
+                            </form>
+                           
+                    </div>
+                </div>
+                    <div id="link-form" class="card w-50 hide">
+                     <div class="card-body">
+                        <div class="card-title">
+                            Share this link with a friend
+                        </div>
+                        <form>
+                            <input type="text" id="link-input" value=" "/>
+                        </form>
+                     </div>   
+                    </div>
+            </div>
+        </div>
+       
+      
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="index.js"></script>
+    </body>
+</html>
