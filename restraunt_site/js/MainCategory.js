@@ -13,7 +13,7 @@ menu.addEventListener('click',async()=>{
       <div class="food-categories col-md-4 col-sm-5 col-xs-6 col-xxs-12" >
         <div class="category-tile">
           <img width="200" height="200" src="images/menu/${menuCategories[0].short_name}/${menuCategories[0].short_name}.jpg" class='img-fluid' alt="Soup">
-          <span>${menuCategories[0].name}</span>
+          <span class='main-category'>${menuCategories[0].name}</span>
         </div>`
     for(let i=1;i<=8;i++){
     const foodCategory=document.querySelector('.food-categories')
@@ -25,13 +25,16 @@ menu.addEventListener('click',async()=>{
 //========================
   //=====on click of menu category tile
   const menuItems=document.querySelectorAll('.category-tile')
- 
+  console.log(menuItems)
   for(menuItem of menuItems){
-    console.log(menuItem)
-    menuItem.addEventListener('click',fetchMenuItems) 
+    
+    menuItem.addEventListener('click',()=>{
+      console.log(menu)
+    }
+   ) 
   }
   // //arrow functions to be called without paranthesis
-  // })
+  //  fetchMenuItems})
 
 //
 })
