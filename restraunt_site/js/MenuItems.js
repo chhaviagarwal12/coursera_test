@@ -2,8 +2,12 @@ const fetchMenuItems=async(shortName,categoryName)=>{
   const response=await axios.get("https://davids-restaurant.herokuapp.com/menu_items.json?category="+shortName)
   const menuItems=response.data
   console.log(menuItems)
+  document.querySelector('.img-fluid').classList.add('d-none')
   document.querySelector('#single-category').classList.add('d-none')
+  document.querySelector('#home-tiles').classList.add('d-none')
+  
   document.querySelector('#menu-categories-title').innerHTML=categoryName
+  document.querySelector('hr').classList.remove('d-none')
   document.querySelector('.special-instructions').innerHTML=menuItems.category.special_instructions
   const singleItem=document.querySelector('#menu-items-category')
   singleItem.classList.remove('d-none')
