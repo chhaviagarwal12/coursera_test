@@ -34,7 +34,7 @@ const fetchMenuItems=async(shortName,categoryName)=>{
   <hr class="d-block d-sm-none">
 </div>
 `
-for(let i=1;i<=7;i++){
+for(let i=1;i<=menu_items.length-1;i++){
   const foodItem=document.querySelector('.menu-item-tile')
   const clone=foodItem.cloneNode(true)
   clone.querySelector('.menu-item-short-name').innerHTML=menu_items[i].short_name
@@ -54,7 +54,7 @@ for(let i=1;i<=7;i++){
 // }
 const priceSmall=Array.from(document.querySelectorAll('.price-small'))
 console.log(priceSmall)
-for(let i=0;i<=7;i++){
+for(let i=0;i<=menu_items.length-1;i++){
 if(menu_items[i].price_small===null){
   priceSmall[i].classList.add('d-none')
 }

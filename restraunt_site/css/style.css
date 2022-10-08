@@ -84,10 +84,11 @@ body {
     padding-right: 15px;
   }
 
- .container .jumbotron {
+ .container .restraunt-image {
   box-shadow: 0 0 50px #3F0C1F;
   border: 2px solid #3F0C1F;
   margin-top: 10px;
+ 
 }
 
 .material-icons, a,a:hover {
@@ -95,9 +96,7 @@ body {
   color:#61122f;
  
 }
-#dropdownbutton1{
-  display: none;
-}
+
 #home-tiles.row{
   display: flex;
   flex-wrap: wrap;
@@ -132,11 +131,9 @@ body {
 }
 #map-tile{
   background-position: center;
- 
   /* margin-left: 40px; */
   padding: 0px;
- 
-  
+
 }
 
 #menu-tile span, #specials-tile span, #map-tile span {
@@ -283,12 +280,12 @@ h3.menu-item-title {
   max-width: 1200px;
  }
  
-  .container .jumbotron {
+  /* .container .jumbotron {
     background: url('../images/jumbotron_1200.jpg') no-repeat;
     height: 675px;
     max-width: 1200px;
     
-  }
+  } */
 }
 
 /********** Medium devices only **********/
@@ -309,7 +306,12 @@ h3.menu-item-title {
 
 /********** Small devices only **********/
 @media (min-width: 576px) and (max-width: 767px) {
-
+  #logo-img {
+    background: url('../images/restaurant-logo_small.png') no-repeat;
+    width: 70px;
+    height: 70px;
+    margin:  0;
+  }
 
   .container .jumbotron {
     background: url('../images/jumbotron_768.jpg') no-repeat;
@@ -319,8 +321,10 @@ h3.menu-item-title {
 }
 
 /********** Extra small devices only **********/
+
 @media (max-width: 575px) {
   /* Header */
+
   #dropdownbutton1{
     display: flex;
     margin-top: -30px;

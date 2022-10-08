@@ -1,4 +1,4 @@
-const menu=document.querySelectorAll('#menu,#menu-tile')
+const menu=document.querySelectorAll('#firstLI,#menu-tile')
 
 
 for(m of menu)
@@ -8,6 +8,9 @@ async function onClickMenu(){
 //===fetching data for menu categories 
 const response=  await axios.get('https://davids-restaurant.herokuapp.com/categories.json')
 const menuCategories=response.data
+if(menuCategories===null || menuCategories===undefined ){
+alert("Data not available from API")
+}
 //====hiding image and loading menu categories tile
 const singleCategory=document.querySelector('#single-category');
 document.querySelector('.img-fluid').classList.add('d-none')
@@ -22,10 +25,10 @@ singleCategory.classList.remove('d-none')
 singleCategory.innerHTML=`
     <div class="food-categories col-md-4 col-sm-5 col-xs-6 col-xxs-12" >
       <div class="category-tile" id=${menuCategories[0].short_name}>
-        <img id="main-category-image" width="200" height="200" src="images/menu/${menuCategories[0].short_name}/${menuCategories[0].short_name}.jpg" class='img-fluid' alt="Soup">
+        <img id="main-category-image" width="200" height="200" src="images/menu/${menuCategories[0].short_name}/${menuCategories[0].short_name}.jpg" class='img-fluid' alt="image not available">
         <span class='main-category'>${menuCategories[0].name}</span>
       </div>`
-  for(let i=1;i<=8;i++){
+  for(let i=1;i<=menuCategories.length-1;i++){
   const foodCategory=document.querySelector('.food-categories')
   const clone=foodCategory.cloneNode(true)
   clone.querySelector('.category-tile').id=menuCategories[i].short_name
@@ -47,7 +50,7 @@ const menuItems=document.querySelectorAll('.category-tile')
 //   }
 //  )
 // }
-for(let i=0;i<menuItems.length;i++){
+for(let i=0;i<menuItems.length-1;i++){
   menuItems[i].addEventListener('click',()=>{
     fetchMenuItems(menuItems[i].id,menuCategories[i].name)
   }

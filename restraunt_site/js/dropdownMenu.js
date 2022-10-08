@@ -13,14 +13,14 @@ function createLiElement(idSelector){
     <a href="#">
      <span class="material-icons">star</span><br class="hidden-xs"> Awards</a>
   </li> 
-  <li id="phone" class="hidden-xs">
+  <li id="phone" class="d-none d-sm-block">
              <a href="tel:410-602-5008">
               <span class="material-icons">phone_android</span><br class="hidden-xs"> 410-602-5008</a><div>* We Deliver</div>
            </li>`
 
+
+
 }
-const firstLI=document.querySelector('#firstLI')
-const clone=firstLI.cloneNode(true)
 
 function listenEvent(){
     console.log("event resize trigger")
